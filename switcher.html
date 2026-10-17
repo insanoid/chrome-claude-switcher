@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude accounts</title>
+  <link rel="stylesheet" href="switcher.css">
+  <script src="switcher.js" defer></script>
+</head>
+<body>
+  <div class="backdrop" id="backdrop"></div>
+  <main class="card" role="dialog" aria-labelledby="title">
+    <header>
+      <img src="icons/mark.svg" alt="" class="mark">
+      <h1 id="title">Accounts</h1>
+      <span class="chip" id="current"></span>
+    </header>
+
+    <section class="save" id="save" hidden>
+      <div class="save-prompt" id="save-prompt">
+        <div class="text">
+          <div class="title">This login is not saved</div>
+          <div class="meta">Save it to switch back to it later.</div>
+        </div>
+        <button type="button" class="primary" id="save-open">Save current session <kbd>S</kbd></button>
+      </div>
+      <form class="save-form" id="save-form" hidden>
+        <input id="save-name" placeholder="Name, e.g. Work" autocomplete="off" spellcheck="false" aria-label="Session name">
+        <button type="submit" class="primary">Save</button>
+      </form>
+    </section>
+
+    <ul id="list" role="listbox" aria-label="Accounts" tabindex="-1"></ul>
+
+    <p class="banner" id="banner" role="status" hidden></p>
+  </main>
+</body>
+</html>
